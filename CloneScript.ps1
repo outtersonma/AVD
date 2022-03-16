@@ -145,7 +145,7 @@ $imageDefinitions = Get-AzResource -ResourceType Microsoft.Compute/galleries/ima
 $galleryImageDefinitionName=$imageDefinitions.Name.split("/")[1]
 $galleryImageVersionName = "0.0.$versionNumber"
 #$location = "uksouth"
-#$sourceImageId = "/subscriptions/9125ff31-3037-4ddb-a83a-73e664be6d94/resourceGroups/AVD-IMAGES/providers/Microsoft.Compute/virtualMachines/gold-VM-V20220114T1401478562"
+#$sourceImageId = "/subscriptions/xxxxxxxx-3037-4ddb-a83a-73e664be6d94/resourceGroups/AVD-IMAGES/providers/Microsoft.Compute/virtualMachines/gold-VM-V20220114T1401478562"
 $sourceImageVM=get-azvm -ResourceGroupName $ImagesRG -Name $virtualMachineName
 $sourceImageId=$sourceImageVM.Id
 New-AzGalleryImageVersion -ResourceGroupName $galleriesRG -GalleryName $galleryName -GalleryImageDefinitionName $galleryImageDefinitionName -Name $galleryImageVersionName -Location $location -SourceImageId $sourceImageId
