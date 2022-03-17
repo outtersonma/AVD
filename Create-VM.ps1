@@ -8,7 +8,7 @@
 #Select-AzSubscription -Subscription "xxxxxx.xxxxx.xxxx.xxxx"
  
 #Define the following parameters for the virtual machine.
-$vmAdminUsername = "AVDAdmin"
+$vmAdminUsername = "Enter Username"
 $vmAdminPassword = ConvertTo-SecureString "Enterpasswordhere" -AsPlainText -Force
 $vmComputerName = "AVD-Gold-01"
  
