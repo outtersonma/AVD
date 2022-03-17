@@ -24,7 +24,7 @@ $virtualMachineSize = 'Standard_D2ds_v5'
 $virtualNetworkName = 'rg-avd-images-uks-01-vnet'
 
 #Provide temporary resource group for disposable resources
-$TempRG = "AVD-Clone-" + (get-date -Format FileDateTime)
+$TempRG = "$masterImage" + (get-date -Format "-dd-MM-yyyy-HH-mm")
 
 ####################################################################################################################
 
