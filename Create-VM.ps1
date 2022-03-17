@@ -36,10 +36,7 @@ $azureVmSkus = "win10-21h2-avd-m365-g2"
 #Get the subnet details for the specified virtual network + subnet combination.
 $azureVnetSubnet = (Get-AzVirtualNetwork -Name $azureVnetName -ResourceGroupName $vnetResourceGroup).Subnets | Where-Object {$_.Name -eq $azureVnetSubnetName}
  
-#Create the public IP address.
-#$azurePublicIp = New-AzPublicIpAddress -Name $azurePublicIpName -ResourceGroupName $azureResourceGroup -Location $azureLocation -AllocationMethod Dynamic
- 
-#Create the NIC and associate
+#Create the NIC
 $azureNIC = New-AzNetworkInterface -Name $azureNicName -ResourceGroupName $azureResourceGroup -Location $azureLocation -SubnetId $azureVnetSubnet.Id
  
 #Store the credentials for the local admin account.
