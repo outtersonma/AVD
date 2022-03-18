@@ -51,4 +51,4 @@ $VirtualMachine = Set-AzVMBootDiagnostic -VM $VirtualMachine -Disable
 $VirtualMachine = Set-AzVMOSDisk -VM $VirtualMachine -StorageAccountType "Premium_LRS" -Caching ReadWrite -Name $azureVmOsDiskName -CreateOption FromImage
  
 #Create the virtual machine.
-New-AzVM -ResourceGroupName $azureResourceGroup -Location $azureLocation -VM $VirtualMachine -Verbose
+New-AzVM -ResourceGroupName $azureResourceGroup -Location $azureLocation -VM $VirtualMachine -DisableBginfoExtension -Verbose
