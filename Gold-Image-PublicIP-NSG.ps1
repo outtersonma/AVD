@@ -5,7 +5,7 @@
 Login-AzAccount
 
 #Select Azure subscription ID
-Select-AzSubscription -Subscription "b307cf18-be83-48b5-aad4-899e579070b9"
+Select-AzSubscription -Subscription "xxxx-xxxxx-xxxxx-xxxxx-xxxx"
  
 #Define the following parameters for the virtual machine.
 $vmAdminUsername = Read-Host -Prompt "Enter"
