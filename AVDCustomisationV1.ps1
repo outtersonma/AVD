@@ -24,12 +24,12 @@ if (!(Test-Path "C:\AVD\Language.txt")) {
     if (!(test-path -path C:\AVD\Language\en-gb)) {new-item -path C:\AVD\Language\en-gb -itemtype directory}
     
     
-  
+    $ProgressPreference = 'SilentlyContinue'
     #Download Language Pack ISO#
     Invoke-WebRequest -Uri 'https://software-download.microsoft.com/download/pr/19041.1.191206-1406.vb_release_CLIENTLANGPACKDVD_OEM_MULTI.iso' -OutFile 'c:\temp\Language.iso'
     #Download FOD ISO#
     Invoke-WebRequest -Uri 'https://software-download.microsoft.com/download/pr/19041.1.191206-1406.vb_release_amd64fre_FOD-PACKAGES_OEM_PT1_amd64fre_MULTI.iso' -OutFile 'c:\temp\FOD.iso'
-
+    $ProgressPreference = 'Continue'
 
     ##Mount Language ISO##
     
