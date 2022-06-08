@@ -31,7 +31,11 @@ $azureVnetSubnetName        = "default"
 #Define the VM marketplace image details.
 $azureVmPublisherName = "MicrosoftWindowsDesktop"
 $azureVmOffer = "office-365"
-$azureVmSkus = "win10-21h2-avd-m365-g2"
+#$azureVmSkus = "win10-21h2-avd-m365-g2"
+$azureVmSkus = "win11-21h2-avd-m365"
+#$azureVmSkus = "21h1-evd-o365pp-g2"
+#$azureVmSkus = "20h2-evd-o365pp-g2"
+#$azureVmSkus = "20h1-evd-o365pp-g2"
  
 #Get the subnet details for the specified virtual network + subnet combination.
 $azureVnetSubnet = (Get-AzVirtualNetwork -Name $azureVnetName -ResourceGroupName $vnetResourceGroup).Subnets | Where-Object {$_.Name -eq $azureVnetSubnetName}
