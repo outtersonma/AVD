@@ -1,0 +1,2 @@
+Invoke-WebRequest -Uri 'https://teams.microsoft.com/downloads/desktopurl?env=production&plat=windows&arch=x64&managedInstaller=true&download=true' -OutFile 'c:\temp\Teams_windows_x64.msi'
+msiexec /i c:\temp\Teams_windows_x64.msi /l*v c:\temp\Teams_windows_x64.log OPTIONS="noAutoStart=true" ALLUSER=1 ALLUSERS=1
