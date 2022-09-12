@@ -215,7 +215,7 @@ Expand-Archive -Path 'C:\AVD\master.zip' -DestinationPath 'C:\AVD\'  -Force
 Start-Sleep -Seconds 10
 
 #Overwriting the AppxPackage.json to configure which UWP are removed during optimisation
- (Get-Content -path C:\AVD\Virtual-Desktop-Optimization-Tool-main\2009\ConfigurationFiles\AppxPackages.json -Raw) -replace 'Unchanged' , 'Disabled' | Set-Content -path C:\AVD\Virtual-Desktop-Optimization-Tool-main\2009\ConfigurationFiles\AppxPackages.json;
+ (Get-Content -path C:\AVD\Virtual-Desktop-Optimization-Tool-main\2009\ConfigurationFiles\AppxPackages.json -Raw) -replace 'Enabled' , 'Disabled' | Set-Content -path C:\AVD\Virtual-Desktop-Optimization-Tool-main\2009\ConfigurationFiles\AppxPackages.json;
 
 ((Get-Content -Path C:\AVD\Virtual-Desktop-Optimization-Tool-main\2009\ConfigurationFiles\AppxPackages.json -Raw) -replace 'Microsoft.MSPaint', 'Microsoft.MSPaint_DonNotRemove') | Set-Content -Path C:\AVD\Virtual-Desktop-Optimization-Tool-main\2009\ConfigurationFiles\AppxPackages.json
 ((Get-Content -Path C:\AVD\Virtual-Desktop-Optimization-Tool-main\2009\ConfigurationFiles\AppxPackages.json -Raw) -replace 'Microsoft.MicrosoftStickyNotes', 'Microsoft.MicrosoftStickyNotes_DonNotRemove') | Set-Content -Path C:\AVD\Virtual-Desktop-Optimization-Tool-main\2009\ConfigurationFiles\AppxPackages.json
@@ -237,7 +237,7 @@ if ((gwmi win32_computersystem).partofdomain -eq $false) {exit 0}
 if (Test-Path "C:\AVD\DONOTDELETE.log") {exit 0}
 Set-ExecutionPolicy -ExecutionPolicy ByPass -Force
 change logon /drainuntilrestart
-.\Windows_VDOT.ps1 -AcceptEULA -Verbose *> "C:\AVD\DONOTDELETE.log" -Restart 
+.\Windows_VDOT.ps1 -Optimizations All -Verbose -AcceptEula -Verbose *> "C:\AVD\DONOTDELETE.log" -Restart 
 '}
 
 #Creating Scheduled Task for AVD Optimisation 
