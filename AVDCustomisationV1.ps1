@@ -237,7 +237,7 @@ if ((gwmi win32_computersystem).partofdomain -eq $false) {exit 0}
 if (Test-Path "C:\AVD\DONOTDELETE.log") {exit 0}
 Set-ExecutionPolicy -ExecutionPolicy ByPass -Force
 change logon /drainuntilrestart
-.\Windows_VDOT.ps1 -Optimizations All -Verbose -AcceptEula -Verbose *> "C:\AVD\DONOTDELETE.log" -Restart 
+.\Windows_VDOT.ps1 -Optimizations All -AcceptEula -Verbose *> "C:\AVD\DONOTDELETE.log" -Restart 
 '}
 
 #Creating Scheduled Task for AVD Optimisation 
