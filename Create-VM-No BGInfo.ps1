@@ -29,6 +29,8 @@ $azureVnetName              = "vnet_avd"
 $azureVnetSubnetName        = "default"
  
 #Define the VM marketplace image details.
+#Get List Of Skus
+#Get-AzVMImageSku -Location uksouth -PublisherName MicrosoftWindowsDesktop -Offer office-365 | Select Skus
 $azureVmPublisherName = "MicrosoftWindowsDesktop"
 $azureVmOffer = "office-365"
 $azureVmSkus = "win11-21h2-avd-m365"
