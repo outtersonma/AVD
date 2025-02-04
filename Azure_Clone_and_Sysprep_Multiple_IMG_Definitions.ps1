@@ -154,7 +154,7 @@ $vm | Set-AzVm -Generalized
 $galleries = Get-AzResource -ResourceType Microsoft.Compute/galleries
 $galleriesRG=$galleries.ResourceGroupName
 $galleryName=$galleries.Name
-$galleryImageVersionName = "0.0.$versionNumber"
+$galleryImageVersionName = $versionNumber
 $sourceImageVM=get-azvm -ResourceGroupName $TempRG -Name $virtualMachineName
 $sourceImageId=$sourceImageVM.Id
 New-AzGalleryImageVersion -ResourceGroupName $galleriesRG -GalleryName $galleryName -GalleryImageDefinitionName $galleryImageDefinitionName -Name $galleryImageVersionName -Location $location -SourceImageId $sourceImageId
